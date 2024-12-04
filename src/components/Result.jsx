@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import { GameContext } from "../context/GameContextProvider";
+import Confetti from "react-confetti";
+
+//import image
 import Score from "../assets/images/score.png";
 import RestartBtn from "../assets/images/restart-btn.png";
 import loseIcon from '../assets/images/loseIcon.png'
 import winIcon from '../assets/images/winIcon.png'
-import Confetti from "react-confetti";
+import christmas from '../assets/images/christmas.png'
 
 const Result = () => {
   const { gameOver, gameWon, restartGame, score } = useContext(GameContext);
@@ -20,7 +23,8 @@ const Result = () => {
             <img src={loseIcon} alt="" className=" h-40" />
           </div>
         ) : gameWon ? (
-          <div className="flex items-center">
+            <div className="flex flex-col justify-center items-center">
+              <img src={christmas} alt="" className=" h-40" />
             <p className=" text-6xl md:text-8xl font-bold">You Win</p>
             <img src={winIcon} alt="" className=" h-40" />
           </div>
