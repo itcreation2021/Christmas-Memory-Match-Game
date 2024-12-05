@@ -14,8 +14,7 @@ const IconCard = ({ iconId }) => {
   return (
     <div
       onClick={handleClick}
-      className={`relative w-[4rem] h-[4rem] md:w-[4.5rem] md:h-[4.5rem] flex justify-center items-center cursor-pointer perspective-1000`}
-    >
+      className="relative w-[4rem] h-[4rem] md:w-[4.5rem] md:h-[4.5rem] flex justify-center items-center cursor-pointer perspective-1000">
       <div
         className={`flip-card-inner ${
           card.flipped || showIcons ? "flip-card-flipped" : ""

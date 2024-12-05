@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useRef, useState } from 'react'
+import React, { createContext, useEffect, useRef, useState } from "react";
 
 // Import icons
 import ball from "../assets/images/icons/ball.png";
@@ -13,17 +13,16 @@ import tree from "../assets/images/icons/tree.png";
 export const GameContext = createContext();
 
 const GameContextProvider = ({ children }) => {
-  const [cards, setCards] = useState([]);
-  const [flippedCards, setFlippedCards] = useState([]);
-  const [matchedPairs, setMatchedPairs] = useState([]);
-  const [showIcons, setShowIcons] = useState(true);
+  const [cards, setCards] = useState([]); //cards array for the game
+  const [flippedCards, setFlippedCards] = useState([]); // current flipped cards
+  const [matchedPairs, setMatchedPairs] = useState([]); // store icons that have been matched
+  const [showIcons, setShowIcons] = useState(true); // control whether icons are visible
 
   const [timeLeft, setTimeLeft] = useState(45);
   const [gameOver, setGameOver] = useState(false);
   const [gameWon, setGameWon] = useState(false);
-  const timerRef = useRef(null); // useRef to keep track of the timer
-
-  const [score, setScore] = useState(0);
+  const timerRef = useRef(null); // track of the timer
+  const [score, setScore] = useState(0); // the player's score.
 
   //christmas icons array
   const christmasIcons = [
@@ -38,9 +37,9 @@ const GameContextProvider = ({ children }) => {
   ];
 
   useEffect(() => {
-    // Create pairs for each icon and shuffle them
-    const pairIcons = [...christmasIcons, ...christmasIcons];
-    const shuffledIcons = pairIcons.sort(() => Math.random() - 0.5);
+    const pairIcons = [...christmasIcons, ...christmasIcons]; // Duplicate the icons to create pairs
+
+    const shuffledIcons = pairIcons.sort(() => Math.random() - 0.5); // random icon pairs
 
     // Map shuffled icons to card objects
     const cardItems = shuffledIcons.map((icon, index) => ({
@@ -74,21 +73,22 @@ const GameContextProvider = ({ children }) => {
 
   // Function to handle card flips
   const flipCard = (index) => {
-    if (flippedCards.length === 2) return;
+    if (flippedCards.length === 2) return; // Prevent flipping more than 2 cards
 
+    // Flip card at the given index and update
     const updatedCards = [...cards];
     updatedCards[index].flipped = true;
     setCards(updatedCards);
 
     setFlippedCards((prev) => {
-      const newFlippedCards = [...prev, index];
+      const newFlippedCards = [...prev, index]; //new array by adding the current flipped card's index
 
+      // 2 cards are currently flipped
       if (newFlippedCards.length === 2) {
         const [firstIndex, secondIndex] = newFlippedCards;
 
-        if (
-          updatedCards[firstIndex].icon === updatedCards[secondIndex].icon
-        ) {
+        if (updatedCards[firstIndex].icon === updatedCards[secondIndex].icon) {
+          // new array by adding matched icon
           const newMatchedPairs = [
             ...matchedPairs,
             updatedCards[firstIndex].icon,
@@ -104,7 +104,7 @@ const GameContextProvider = ({ children }) => {
               setGameWon(true);
             }, 1000);
 
-            setScore(timeLeft * 10);
+            setScore(timeLeft * 10); //score based on the remaining time
           }
         } else {
           setTimeout(() => {
@@ -139,13 +139,12 @@ const GameContextProvider = ({ children }) => {
         gameOver,
         gameWon,
         restartGame,
-
         score,
       }}
     >
       {children}
     </GameContext.Provider>
   );
-}
+};
 
-export default GameContextProvider
+export default GameContextProvider;

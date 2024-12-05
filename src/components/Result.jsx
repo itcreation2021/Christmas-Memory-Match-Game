@@ -19,13 +19,13 @@ const Result = () => {
       <h1 className=" text-orange-300 mb-8">
         {gameOver ? (
           <div className="flex items-center">
-            <p className=" text-6xl md:text-8xl font-bold">Game Over</p>
+            <p className=" text-5xl md:text-8xl font-bold">Game Over</p>
             <img src={loseIcon} alt="" className=" h-40" />
           </div>
         ) : gameWon ? (
             <div className="flex flex-col justify-center items-center">
               <img src={christmas} alt="" className=" h-40" />
-            <p className=" text-6xl md:text-8xl font-bold">You Win</p>
+            <p className=" text-5xl md:text-8xl font-bold">You Win</p>
             <img src={winIcon} alt="" className=" h-40" />
           </div>
         ) : (
