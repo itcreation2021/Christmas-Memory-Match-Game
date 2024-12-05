@@ -8,7 +8,7 @@ import Result from "./components/Result";
 const App = () => {
   return (
     <GameContextProvider>
-      <main className="relative w-screen h-screen flex justify-center items-center bg-app-banner bg-center bg-cover">
+      <main className="relative w-screen h-screen flex justify-center items-center bg-app-banner bg-center bg-cover overflow-hidden">
         <div className="flex justify-center items-center w-[36rem] h-[36rem] md:w-[40rem] md:h-[40rem] bg-gameboard-background bg-center bg-contain bg-no-repeat">
           <GameBoard />
         </div>

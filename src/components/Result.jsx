@@ -5,9 +5,9 @@ import Confetti from "react-confetti";
 //import image
 import Score from "../assets/images/score.png";
 import RestartBtn from "../assets/images/restart-btn.png";
-import loseIcon from '../assets/images/loseIcon.png'
-import winIcon from '../assets/images/winIcon.png'
-import christmas from '../assets/images/christmas.png'
+import loseIcon from "../assets/images/loseIcon.png";
+import winIcon from "../assets/images/winIcon.png";
+import christmas from "../assets/images/christmas.png";
 
 const Result = () => {
   const { gameOver, gameWon, restartGame, score } = useContext(GameContext);
@@ -16,22 +16,26 @@ const Result = () => {
 
   return (
     <div className=" absolute inset-0 flex flex-col items-center justify-center bg-black/80 z-50 rounded-xl">
-      <h1 className=" text-orange-300 mb-8">
+      <div className=" text-orange-300 mb-5">
         {gameOver ? (
-          <div className="flex items-center">
-            <p className=" text-5xl md:text-8xl font-bold">Game Over</p>
-            <img src={loseIcon} alt="" className=" h-40" />
-          </div>
-        ) : gameWon ? (
-            <div className="flex flex-col justify-center items-center">
-              <img src={christmas} alt="" className=" h-40" />
-            <p className=" text-5xl md:text-8xl font-bold">You Win</p>
-            <img src={winIcon} alt="" className=" h-40" />
+          <div className="flex flex-col items-center">
+            <p className="text-5xl md:text-7xl font-bold">Game Over</p>
+            <img src={loseIcon} alt="" className=" h-56" />
           </div>
         ) : (
-          ""
+          <>
+            {gameWon ? (
+              <div className="flex flex-col justify-center items-center">
+                <img src={christmas} alt="" className=" h-40" />
+                <p className="text-5xl md:text-7xl font-bold">You Win</p>
+                <img src={winIcon} alt="" className=" h-56" />
+              </div>
+            ) : (
+              ""
+            )}
+          </>
         )}
-      </h1>
+      </div>
       <div className=" flex items-center gap-3 mt-10">
         <img src={Score} alt="score" className=" w-10 h-10" />
         <p className=" text-4xl uppercase font-bold text-white ">
