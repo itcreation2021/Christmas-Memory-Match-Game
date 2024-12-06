@@ -1,0 +1,83 @@
+/* Small devices (phones, up to 350px width) */
+@media (min-width: 350px) {
+  .gameboard {
+    top:16rem !important; 
+  }
+  .buttonmenu{
+    top:35rem !important
+  }
+}
+
+/*  devices (phones, up to 360px width) */
+@media (min-width: 360px) {
+  .gameboard {
+    top:17rem !important; 
+  }
+  .buttonmenu{
+    top:37rem !important
+  }
+}
+
+/* IPhone 12 */
+@media (min-width: 390px) {
+  .gameboard {
+    top:20rem !important; 
+  }
+  .buttonmenu{
+    top:40rem !important
+  }
+}
+
+/* Devices 410px */
+@media (min-width: 410px) {
+  .gameboard {
+    top:22.5rem !important; 
+  }
+  .buttonmenu{
+    top:43rem !important
+  }
+}
+
+/* IPhone 14 */
+@media (min-width: 430px) {
+  .gameboard {
+    top:23rem !important; 
+  }
+  .buttonmenu{
+    top:43rem !important
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .gameboard {
+    top: 25.5rem !important;
+  }
+  .buttonmenu{
+    top:50rem !important;
+    right:15rem !important
+  }
+}
+
+/* Ipda Air */
+@media (min-width: 820px) {
+  .gameboard {
+    top: 30rem !important;
+  }
+  .buttonmenu{
+    top:55rem !important;
+    right:16rem !important
+  }
+}
+
+/* Ipad Pro */
+@media (min-width: 1024px) {
+  .gameboard {
+    top: 36rem !important;
+  }
+  .buttonmenu{
+    top:60rem !important;
+    right:22rem !important
+  }
+}
+
