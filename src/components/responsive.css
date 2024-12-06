@@ -59,7 +59,7 @@
   }
 }
 
-/* Ipda Air */
+/* Ipad Air */
 @media (min-width: 820px) {
   .gameboard {
     top: 30rem !important;
@@ -70,14 +70,14 @@
   }
 }
 
-/* Ipad Pro */
+/* Desktop */
 @media (min-width: 1024px) {
   .gameboard {
-    top: 36rem !important;
+    top: 15rem !important;
   }
   .buttonmenu{
-    top:60rem !important;
-    right:22rem !important
+    top:20rem !important;
+    right:13rem !important
   }
 }
 
